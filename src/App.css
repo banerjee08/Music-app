@@ -1,0 +1,38 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav,
+footer {
+  display: flex;
+  align-items: center;
+  background-color: #001822;
+}
+
+nav {
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.logo {
+  width: 120px;
+}
+
+.menu,
+.social-media-logo {
+  width: 30px;
+}
+
+.social-media{
+  display: flex;
+  gap: 15px
+}
+
+footer {
+  color: #a8cf45;
+  flex-direction: column;
+}
+
