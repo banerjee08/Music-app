@@ -26,9 +26,10 @@ nav {
   width: 30px;
 }
 
-.social-media{
+.social-media {
   display: flex;
-  gap: 15px
+  gap: 15px;
+  /* align items horizontally */
 }
 
 footer {
@@ -36,3 +37,96 @@ footer {
   flex-direction: column;
 }
 
+.album-container {
+  /* adjust the height of the container */
+}
+
+.album,
+.album-details,
+button,
+.add-album{
+  border-radius: 5px;
+}
+
+.album{
+  /* border: 1px red solid; */
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+.album::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./Assets/Beatbox.png);
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.album-details,
+.add-album{
+  background-color: rgba(168, 207, 69, 0.6);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+  width: 60%;
+  padding: 8px 0 25px;
+}
+
+.add-album{
+  padding: 28px 0;
+}
+
+h3{
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+h5{
+  font-size: 25px;
+  margin-top: 0;
+}
+
+button{
+  border: none;
+  padding: 10px 18px;
+  color: #001822;
+  cursor: pointer;
+}
+
+.del-icon,
+.edit-icon{
+  width: 20px
+}
+
+.action-btns{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.del-btn:hover,
+.edit-btn:hover,
+.add-album button:hover{
+  background-color: rgba(0, 152, 218, 0.7)
+}
+
+.edit-btn{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 5px;
+}
+
+.edit-btn p{
+  margin: 0;
+}
