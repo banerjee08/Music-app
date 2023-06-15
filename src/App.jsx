@@ -32,10 +32,27 @@ function App() {
     fetchData();
   }, []);
 
+  // add new album
+  const addAlbum = async (albumData) => {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/albums', {
+        method: 'POST',
+        body: JSON.stringify(albumData),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8'
+        }
+      });
+      const newAlbum = await response.json();
+      setAlbums(prevAlbum => [...prevAlbum, newAlbum]);
+    } catch (error) {
+      console.error('Error handling album: ', error);
+    }
+  }
+
   return (
     <div className="container">
       <Navbar />
-      <Albums albums={albums} />
+      <Albums albums={albums} addAlbum={ addAlbum } />
       <Footer />
     </div>
   );

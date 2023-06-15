@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Albums(props) {
   const albumArr = props.albums;
+  const [title, setTitle] = useState('');
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title.trim() !== '') {
+      const albumData = {
+        title: title.trim(),
+        image: '',
+      };
+      props.addAlbum(albumData);
+      setTitle('');
+    }
+  };
+
   console.log(albumArr);
   return (
     <section className="album-container">
       <div className="album">
         <div className="add-album">
-          <button>
-            <img src="./Assets/plus.png" className="add-album-icon" />
-          </button>
+          <form onSubmit={handleSubmit}>
+            <button type="submit">
+              <img src="./Assets/plus.png" className="add-album-icon" />
+            </button>
+            <input
+              type="text"
+              value={title}
+              onChange={handleTitleChange}
+              placeholder="Enter album title"
+            />
+          </form>
           <h3>Add Album</h3>
           {/* <div className="album-desc">
                     </div> */}
